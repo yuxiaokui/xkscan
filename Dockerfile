@@ -1,7 +1,10 @@
 FROM python:alpine
 MAINTAINER xi4okv "xi4okui@gmail.com"
 
-RUN pip install requests gevent
+RUN apk update 
+RUN apk add gcc python-dev
+
+RUN pip install requests gevent -i https://mirrors.aliyun.com/pypi/simple/
 
 WORKDIR /opt
 
