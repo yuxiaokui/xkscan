@@ -230,13 +230,15 @@ class Scanner:
 
 if __name__ == '__main__':
     d = Scanner()
-    print "1.vuln check"
-    print "2.s2-045"
-    print "3.headers"
-    print "4.weakfile"
-    print "5.portscan_c"
-    case = raw_input("Please input case:")
+    print ('''
+    1.vuln check \n
+    2.s2-045 \n
+    3.headers \n
+    4.weakfile \n
+    5.portscan_c \n
+    ''')
+    case = input("Please input case:")
     d.run(case)
-    print "\nEnd!"
+    print("\nEnd!")
     d.outfile.flush()
     d.outfile.close()
