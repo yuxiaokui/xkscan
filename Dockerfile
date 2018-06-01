@@ -9,4 +9,6 @@ WORKDIR /opt
 
 ADD xkscan.py xkscan.py
 
-ENTRYPOINT celery -A xkscan worker --loglevel=info
+ENV BROKER None
+
+ENTRYPOINT celery -A xkscan worker --loglevel=info -c 10
