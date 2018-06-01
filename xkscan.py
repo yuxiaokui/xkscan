@@ -5,7 +5,7 @@ from celery import Celery
 
 if "BROKER" in os.environ:
     BROKER = os.environ["BROKER"]
-else：
+else:
     BROKER = None
     
 BROKER_URL = 'redis://' + BROKER + '/0'
