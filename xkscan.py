@@ -41,7 +41,7 @@ class Scanner:
 
     def _load_target(self):
         print ('[+] Read targets ...')
-        target_file = raw_input("Target File :")
+        target_file = input("Target File :")
         with open(target_file) as f:
             for line in f.xreadlines():
                 target = line.strip()
