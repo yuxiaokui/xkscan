@@ -96,7 +96,7 @@ class Scanner:
                     result = s.recv(1024)
                     if "totalLinesWritten" in result:
                         self._print_msg(target + "==>  mongodb Vuln",True)
-            except Exception, e:
+            except Exception as e:
                 pass
 
         if ":6379" in target:
@@ -117,7 +117,7 @@ class Scanner:
                         result = s.recv(1024)
                         if '+OK' in result:
                            self._print_msg(target + "==>  redis pass Vuln :" + pass_,True)
-            except Exception, e:
+            except Exception as e:
                 pass
         if ":11211" in target:
             ip,port = target.split(":")
@@ -129,7 +129,7 @@ class Scanner:
                 result = s.recv(1024)
                 if "STAT version" in result:
                     self._print_msg(target + "==>  memcache Vuln",True)
-            except Exception, e:
+            except Exception as e:
                 pass    
 
         if ":9200" in target:
@@ -197,9 +197,9 @@ class Scanner:
                     status = cs.connect_ex((address))
                     if status == 0:
                         self._print_msg( ipc+str(i) + ":" + str(port) ,True)
-                except Exception ,e:
+                except Exception  as e:
                     pass
-                    #print "error:%s" %e
+
                 finally:
                     cs.close()
             self._print_msg()
