@@ -202,7 +202,7 @@ class Scanner:
 
                 finally:
                     cs.close()
-            self._print_msg()
+                self._print_msg()
 
 
 
