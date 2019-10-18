@@ -213,7 +213,7 @@ class Scanner:
         threads = [gevent.spawn(self._scan,case) for i in xrange(1000)]
         try:
             gevent.joinall(threads)
-        except KeyboardInterrupt, e:
+        except KeyboardInterrupt as e:
             msg = '[WARNING] User aborted.'
             sys.stdout.write('\r' + msg + ' ' * (self.console_width - len(msg)) + '\n\r')
             sys.stdout.flush()
