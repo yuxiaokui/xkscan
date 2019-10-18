@@ -41,7 +41,7 @@ class Scanner:
 
     def _load_target(self):
         print ('[+] Read targets ...')
-        target_file = input("Target File :")
+        target_file = raw_input("Target File :")
         with open(target_file) as f:
             for line in f.xreadlines():
                 target = line.strip()
@@ -227,7 +227,7 @@ if __name__ == '__main__':
     print ("3.headers")
     print ("4.weakfile")
     print ("5.portscan_c")
-    case = input("Please input case:")
+    case = raw_input("Please input case:")
     d.run(case)
     print ("\nEnd!")
     d.outfile.flush()
